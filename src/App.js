@@ -5,7 +5,7 @@ import Home from './components/Home'
 import About from './components/About'
 import Contact from './components/Contact'
 import Careers from './components/Careers'
-import { parenthesizedExpression } from '@babel/types';
+import ThankYou from './components/ThankYou'
 
 
 class App extends Component {
@@ -15,7 +15,7 @@ class App extends Component {
       executives: [
       {name: 'Mark Jackson', role: 'CEO', age: 58, "years at company": 22}, 
       {name: 'Malinda Jones', role: 'Vice President of Sales', age: 52, "years at company": 16},
-      {name: 'John Lemons', role: 'Vice President of Public Affairs', age: 61, "years at company": 17},
+      {name: 'Damian Westbrook', role: 'Vice President of Public Affairs', age: 61, "years at company": 17},
       {name: 'Jason Terry', role: 'Vice President of Product Development', age: 57, "years at company": 19},
       {name: 'Sarah Bandwith', role: 'Vice President of Human Resources', age: 49, "years at company": 18},
       {name: 'John Lemons', role: 'Chief Operating Officer', age: 64, "years at company": 20}
@@ -34,7 +34,10 @@ class App extends Component {
         {name: 'Mohammed Shahir', department: 'Sales', age: 33, "years at company": 11}, 
         {name: 'Olivia Carlin', department: 'HR', age: 37, "years at company": 16} 
       ]
-    }
+    }, 
+    inquiries: [
+      {}
+    ]
   }
   render() {
     return (
@@ -42,9 +45,10 @@ class App extends Component {
         <div className="App">
             <Navi />
             <Route exact path="/" component={Home}  />
-            <Route path="/About" component={About} personnel={this.state.personnel}/>
+            <Route path="/About" render={(props) => <About personnel={this.state.personnel}/>}/>
             <Route path="/Contact" component={Contact} />
             <Route path="/Careers" component={Careers} />
+            <Route path="/ThankYou" component={ThankYou} />
 
         </div>
       </BrowserRouter>
